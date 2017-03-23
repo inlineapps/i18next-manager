@@ -24,6 +24,7 @@ class I18nextManager {
     this.version = null;
     this.namespaces = [];
     this.i18next = null;
+    this.checkAndUpdate();
     this.startInterval();
   }
 
@@ -45,7 +46,7 @@ class I18nextManager {
   }
 
   getFixedT(lng, ns) {
-    return this.i18next.getFixedT(lng, ns);
+    return this.getI18nextInstance().getFixedT(lng, ns);
   }
 
   stopInterval() {
